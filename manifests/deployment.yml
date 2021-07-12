@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dubsdevapiglasgowsubway 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dubsdevapiglasgowsubway
+  template:
+    metadata:
+      labels:
+        app: dubsdevapiglasgowsubway 
+    spec:
+      containers:
+        - name: dubsdevapiglasgowsubway 
+          image: acrdubs01.azurecr.io/dubsdevapiglasgowsubway
+          ports:
+          - containerPort: 5000
