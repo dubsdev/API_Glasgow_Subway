@@ -1,0 +1,12 @@
+$rg = "api_glasgow_subway"
+$acr_name = "acrdubs01"
+$cluster_name = "apiGlaSubwayCluster"
+
+# Create the Azure Container Registry 
+az acr create -n $acr_name -g $rg --sku Basic
+
+# Create the Azure Kubernetes Service 
+az aks create -n $cluster_name -g $rg --generate-ssh-keys --attach-acr $acr_name
+
+# Connect to the cluster 
+az aks get-credentials -n $cluster_name -g $rg
