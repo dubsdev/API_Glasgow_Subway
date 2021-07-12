@@ -5,7 +5,7 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
-stations = [{'Name': 'bridge street', 'Location': 'Bridge Street'}, {'Name': 'ibrox', 'Location': 'Govan Road'}]
+stations = [{'Name': 'bridge street', 'Location': 'Bridge Street'}, {'Name': 'ibrox', 'Location': 'Govan Road'}, {'Name': 'Buchanan Street'}]
 
 
 class Index(Resource):
