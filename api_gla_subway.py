@@ -30,7 +30,7 @@ class Single_Station(Resource):
 
 
 api.add_resource(Index, '/')
-api.add_resource(All_Stations, '/api/v1/stations/all')
+api.add_resource(All_Stations, '/api/v1/stations/')
 api.add_resource(Single_Station, '/api/v1/stations/<string:station>')
 
 if __name__ == '__main__':
