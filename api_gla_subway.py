@@ -5,7 +5,7 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
-stations = [{'Name': 'bridge street', 'Location': 'Bridge Street'}, {'Name': 'ibrox', 'Location': 'Govan Road'}, {'Name': 'Buchanan Street', 'Location': 'Well, Buchanan Stree of course'}]
+stations = [{'Name': 'bridge street', 'Location': 'Bridge Street'}, {'Name': 'ibrox', 'Location': 'Copland Road'}, {'Name': 'buchanan street', 'Location': 'Well, Buchanan Stree of course'}]
 
 
 class Index(Resource):
@@ -16,6 +16,8 @@ class All_Stations(Resource):
     def get(self):
         return jsonify(stations)
 
+    def 
+
 class Single_Station(Resource):
     def get(self, station):
 
@@ -24,6 +26,9 @@ class Single_Station(Resource):
         for s in stations: 
             if station == s['Name']:
                 result.append(s)
+        
+        if result == []:
+            return (f'No Station exists with name {station}')
         
         return jsonify(result)
 
